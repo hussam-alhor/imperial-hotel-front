@@ -1,0 +1,30 @@
+.notFound{
+    width: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.notFoundTitle{
+    font-size: 70px;
+    font-weight: bold;
+    color: var(--red-color);
+}
+.notFoundText{
+    font-size: 30px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+.notFounfLink{
+    display: block;
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+    font-size: 21px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.notFounfLink:hover {
+    background-color: var(--primary-color);
+}
