@@ -5,7 +5,7 @@ import { useSidebar } from '../../context/SidebarContext';
 
 // Icons
 import { BiStats, BiCategory } from 'react-icons/bi';
-import { FiShoppingBag, FiSettings } from 'react-icons/fi';
+import { FiShoppingBag, FiSettings, FiPlus } from 'react-icons/fi';
 import { MdOutlineFastfood, MdTableRestaurant } from 'react-icons/md';
 import { BsQrCode } from 'react-icons/bs';
 import { IoLogOutOutline, IoClose, IoReceiptOutline } from 'react-icons/io5';
@@ -37,14 +37,23 @@ const Sidebar = () => {
     const employeeLinks = [
         { icon: <BiStats size={20} />, label: 'Dashboard', path: '/dashboard' },
         { icon: <MdTableRestaurant size={20} />, label: 'Rooms', path: '/dashboard/rooms' },
+        { icon: <FaClipboardList size={20} />, label: 'Customers', path: '/dashboard/customers' },
+        { icon: <IoReceiptOutline size={20} />, label: 'Bookings', path: '/dashboard/bookings' },
+        { icon: <FiPlus size={20} />, label: 'Invoices', path: '/dashboard/invoices' },
+        { icon: <BiCategory size={20} />, label: 'Maintenances', path: '/dashboard/maintenances' },
+        { icon: <FiSettings size={20} />, label: 'Cleaning Schedules', path: '/dashboard/cleaning-schedules' },
 
     ];
+
 
     const adminLinks = [
         { icon: <BiStats size={20} />, label: 'Dashboard', path: '/dashboard' },
         { icon: <FaUsers size={20} />, label: 'Employees', path: '/dashboard/employees' },
-        
+        { icon: <BiCategory size={20} />, label: 'Reports', path: '/dashboard/admin/reports' },
+        { icon: <IoReceiptOutline size={20} />, label: 'Invoices', path: '/dashboard/admin/invoices' },
+        { icon: <FaClipboardList size={20} />, label: 'Audit Logs', path: '/dashboard/admin/audit-logs' },
     ];
+
 
     const linksToRender = isAdmin ? adminLinks : employeeLinks;
     

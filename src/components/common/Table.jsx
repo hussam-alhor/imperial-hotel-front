@@ -32,7 +32,7 @@ const Table = ({
             {columns.map((column, index) => (
               <th
                 key={index}
-                className="px-6 py-4 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                className="pr-20 py-4 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider"
               >
                 {column.header}
               </th>
@@ -45,10 +45,11 @@ const Table = ({
               {columns.map((column, colIndex) => (
                 <td
                   key={colIndex}
-                  className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
+                  className="px-6 py-4 text-sm text-gray-900"
                 >
                   {column.render ? column.render(row) : row[column.key]}
                 </td>
+
               ))}
             </tr>
           ))}

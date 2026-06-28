@@ -1,0 +1,11 @@
+import api from '../lib/api.js';
+
+// جلب إحصائيات الداشبورد (للأدمن والموظف)
+export const getDashboardStats = async () => {
+  try {
+    const response = await api.get('/dashboard/stats');
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+};

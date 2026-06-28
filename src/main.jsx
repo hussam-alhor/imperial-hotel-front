@@ -13,6 +13,16 @@ import DashboardLayout from './layouts/DashboardLayout.jsx';
 import LoginPage from './pages/Login/LoginPage.jsx';
 import EmployeesManagement from './pages/Admin/EmployeesManagement.jsx';
 import RoomsManagement from './pages/Employee/RoomsManagement.jsx';
+import CustomersManagement from './pages/Employee/CustomersManagement.jsx';
+import RoomsBookingManagement from './pages/Employee/RoomsBookingManagement.jsx';
+import InvoicesManagement from './pages/Employee/InvoicesManagement.jsx';
+import MaintenancesManagement from './pages/Employee/MaintenancesManagement.jsx';
+import CleaningSchedulesManagement from './pages/Employee/CleaningSchedulesManagement.jsx';
+import Dashboard from './pages/Dashboard/Dashboard.jsx';
+import AdminReports from './pages/Admin/AdminReports.jsx';
+import AdminInvoices from './pages/Admin/AdminInvoices.jsx';
+import AdminAuditLogs from './pages/Admin/AdminAuditLogs.jsx';
+
 
 
 
@@ -49,7 +59,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>Dashboard Home</div>, // placeholder
+        element: (
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "employees",
@@ -64,6 +78,70 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute allowedRoles={["Employee"]}>
             <RoomsManagement />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "customers",
+        element: (
+          <ProtectedRoute allowedRoles={["Employee"]}>
+            <CustomersManagement />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "bookings",
+        element: (
+          <ProtectedRoute allowedRoles={["Employee"]}>
+            <RoomsBookingManagement />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "invoices",
+        element: (
+          <ProtectedRoute allowedRoles={["Employee"]}>
+            <InvoicesManagement />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "maintenances",
+        element: (
+          <ProtectedRoute allowedRoles={["Employee"]}>
+            <MaintenancesManagement />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "cleaning-schedules",
+        element: (
+          <ProtectedRoute allowedRoles={["Employee"]}>
+            <CleaningSchedulesManagement />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/reports",
+        element: (
+          <ProtectedRoute allowedRoles={["Admin"]}>
+            <AdminReports />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/invoices",
+        element: (
+          <ProtectedRoute allowedRoles={["Admin"]}>
+            <AdminInvoices />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/audit-logs",
+        element: (
+          <ProtectedRoute allowedRoles={["Admin"]}>
+            <AdminAuditLogs />
           </ProtectedRoute>
         ),
       },
